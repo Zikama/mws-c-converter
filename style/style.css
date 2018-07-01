@@ -275,9 +275,9 @@ select:hover{
  .navba{
 	 position: static; margin-bottom: 1.25rem; border-radius: .1875rem; transition: none; background: #096; 
  }.container{
-	 transform: translatex(150px);zoom :-50;
+	 transform: translatex(150px);zoom :30;
  }.container_b{
-	 transform: translatex(850px) translatey(890px); 
+	 transform: translatex(150px) translatey(590px); 
  }main{
 	 display: block; position:relative;left:0px;right:0px;
  }.card_f{
@@ -299,7 +299,7 @@ select:hover{
  }.container{
 	 transform: translatex(40px); 
  }.container_b{
-	 transform: translatex(38px); 
+	 transform: translatex(40px); 
  }
 }
 @media (min-width: 992px){
