@@ -22,9 +22,9 @@ self.addEventListener('fetch',event=> {
         if (requestUrls.pathname === '/') {
 		event.respondWith(caches.match('/index.html'));
 	return;	
-}
-		} 
+} 
 event.respondWith(
        caches.match(event.request).then(response=> response || fetch(event.request);
    );
 });
+
