@@ -275,7 +275,7 @@ select:hover{
  .navba{
 	 position: static; margin-bottom: 1.25rem; border-radius: .1875rem; transition: none; background: #096; 
  }.container{
-	 transform: translatex(150px);zoom :-30;
+	 transform: translatex(150px);
  }.container_b{
 
  }main{
@@ -293,40 +293,7 @@ select:hover{
   display:none;-webkit-appearence:none;opacity: 0;	
  }
  }
-}@media and screen (max-width: 568px){
- .navba{
-	 position: static; margin-bottom: 1.25rem; border-radius: .1875rem; transition: none; background: #096; 
- }.container{
-	 transform: translatex(40px); 
- }
-}
-@media (min-width: 992px){
- .navba{
-	 background-color: transparent; 
-	 border: 0; 
-	 box-shadow: none
- }
-.card_f, .card_b{	 
-	 border-radius: .1875rem; 
-	 box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
- }
-}
-@media (min-width: 1200px){
-.navba{
-	 position: static; 
-	 border-radius: .1875rem; 
-	 transition: none	
- }	
-}
 
-@media (min-width: 1200px){
-.navba{
-	left: 0px; 
-	z-index: 99; 
-	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
-	}
-	
- }
 select, button, input:not([type="text"]){
 	cursor: pointer; 
 }
