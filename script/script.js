@@ -167,7 +167,7 @@ function Errors(error) {
                let self = this;
                let transaction = db.transaction('currencyUsed', "readwrite");
 			   transaction.addEventListener('complete', (e)=> {
-               self.cueS("#button_round").innerHTML =content;  
+               self.cueS("#acts").innerHTML =content;  
      });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
               transaction.addEventListener('error' ,(e)=> {
