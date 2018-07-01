@@ -1,0 +1,11 @@
+{
+  "name": "mws-c-converter-github.io",
+  "scope": "./",
+  "icons": [{
+    "src": "imgs/icon.png",
+    "sizes": "600x600"
+  }],
+  "background_color": "#cececeaf",
+  "display": "standalone",
+  "start_url": "./"
+}
