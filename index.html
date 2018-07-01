@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+ <html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="author" lang="en" content="Manny Vergel" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="./style/style.css" />
+  
+<script src="./script/numeral.min.js"></script>
+
+</head>
+<body>
+   <nav id="nav-ba"class="navba">Currency Converter
+  <span class="card_f">Currencies To Converter
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="UGX">
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="USD">
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="PHP">
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="EUR">
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="KRN">
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="FR">
+      <input type="button" class="bloc" readonly onclick=   "calc.currencyFromValue.value += ' + '"id="" value="GFG">
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="KSH">
+      <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value += ' + '"id="" value="GH">
+   </span>
+</nav>
+<main class="row">
+<section>
+<form class="medium-6 columns container"name="calc">
+  <input type="text" value="7" name="currencyFromValue" id="currencyFromValue" placeholder="Enter amount" /><span id="FroValue">UGX<span>
+   <select id="currency_Fr"NAME="currenciesFROM" class="postfix">
+     </select><br>
+	  
+   <span>	
+<input type="button" class="button  sp"readonly onclick="calc.currencyFromValue.value +='+'"id="add_pls"value="+"/>
+<input type="button"class="button sp"readonly onclick="calc.currencyFromValue.value += '-'"id="add_" value="-"/>
+<input type="button"class="button sp" readonly onclick="calc.currencyFromValue.value +='*'" id="add_m"value="x"/>
+<input type="button"class="button sp"readonly onclick="calc.currencyFromValue.value +='/'"id="add_div"value="/"/>
+<input type="button"  class="button sp"readonly onclick="calc.currencyFromValue.value +='%'" id="add_mo" value="%"/><input type="button" id="clearbutton"readonly class="button sp" value="C" onclick="calc.currencyFromValue.value = ''"/><hr>
+     <input type="button" class="button gray sp" value="del" onclick='f("del")'/> 
+      <input type="button" class="button black sp" value="0" onclick='v("0")'>
+      <input type="button" class="button black sp" value="." onclick='v(".")'>
+      <input type="button" class="button black sp" value="Empty" onclick='c("")'>
+      <input type="button" class="button orange sp" value="=" onclick='e()'> <hr>
+      <input class="button digits"style="background:red" type="button" value="1" onclick="calc.currencyFromValue.value += '1'"   id="add1"/>
+      <input class="button digits"style="background:red" type="button" value="2"onclick="calc.currencyFromValue.value += '2'"  id="add2"/><input class="button digits"style="background:red" type="button" value="3"onclick="calc.currencyFromValue.value += '3'"   id="add3"/><br><input class="button digits"style="background:red" type="button" value="4"onclick="calc.currencyFromValue.value += '4'"   id="add4"/>
+	  <input class="button digits"style="background:red" type="button" value="5" onclick="calc.currencyFromValue.value += '5'"   id="add5"/>
+      <input class="button digits"style="background:red" type="button" value="6" onclick="calc.currencyFromValue.value += '6'"   id="add6"/><br>
+      <input class="button digits"style="background:red" type="button" value="7" onclick="calc.currencyFromValue.value += '7'"   id="add7"/>
+     <input class="button digits"style="background:red" type="button" value="8" onclick="calc.currencyFromValue.value += '8'"   id="add8"/>
+	 <input class="button digits"style="background:red" type="button" value="9" onclick="calc.currencyFromValue.value += '9'"   id="add9"/><br>
+	 <input class="button digits"style="background:red" type="button" value="0"   onclick="calc.currencyFromValue.value += '0'" id="add0"/>       
+     </span>
+    <span class="postfix">to</span>
+  <select name="currenciesTO" id="currency_To" class="postfix">
+  </select>
+ </form>
+ </section>
+</main>
+
+<section id="h"class="container_b">
+<div class="">
+<input type="text" id="currency_Val" readonly placeholder="#Results" class="cls" /><span id="IntoConnverted"><span>
+</div>
+<div class="">
+<button id="convt" class="cls">Convert</button>
+<button id="save" type="hidden"class="cls">SaveToDB</button>
+</div>
+</section>
+
+<div id=""class="recent">Recently activities<br>
+<span id="button_round"class="recent"></span>
+</div><!--
+<footer id="foot" class="fot ">Please Wait...
+ <progress id="progress_ba"class="progress" max="100"min="82"value="25">
+ </progress>
+ <span class="working"><b>working...<p id="demo"></p></b></span>
+</footer>-->
+
+
+<script src="./script/script.js"></script>
+<script src="./script/vendor/jquery.js"></script>
+<script> if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').then(registration=>{console.log(`Wa, Service Worker registed!`);}).catch(err=>{console.log(`Woom!, Service Worker registration failed!`);});});}
+
+function c(val) 
+            { 
+            document.getElementById("currencyFromValue").value=val; 
+            }
+function v(val){ 
+            document.getElementById("currencyFromValue").value+=val;
+} 
+function f(val){ 
+            const ans = document.getElementById("currencyFromValue");
+                  ans.value = ans.value.substring(0,ans.value.length-1);
+}
+function e(){ 
+         try { 
+       c(eval(document.getElementById("currencyFromValue").value)) 
+             } 
+            catch(e) 
+             { 
+               c('Error!') 
+             }};/*
+function populateList() {	 
+  let allCurrencies = [
+         "ALL", "XCD", "EUR", "BBD", "BTN", "BND", "XAF", "CUP", "USD", "FKP", "GIP", "HUF", "IRR", "JMD", "AUD", "LAK", "LYD", "MKD", "XOF", "NZD", "OMR", "PGK", "RWF", "WST", "RSD", "SEK", "TZS", "AMD", "BSD", "BAM", "CVE ", "CNY", "CRC ", "CZK ", "ERN", "GEL", "HTG", "INR ", "JOD", "KRW", "LBP", "MWK", "MRO", "MZN", "ANG", "PEN", "QAR", "STD", "SLL", "SOS", "SDG ", "SYP ", "AOA", "AWG", "BHD", "BZD", "BWP", "BIF ", "KYD", "COP ", "DKK", "GTQ", "HNL", "IDR", "ILS", "KZT ", "KWD ", "LSL", "MYR", "MUR", "MNT ", "MMK", "NGN", "PAB", "PHP", "RON", "SAR", "SGD", "ZAR", "SRD ", "TWD ", "TOP", "VEF ", "DZD", "ARS", "AZN ", "BYR", "BOB", "BGN", "CAD", "CLP", "CDF", "DOP ", "FJD", "GMD", "GYD", "ISK", "IQD ", "JPY", "KPW ", "LVL", "CHF ", "MGA ", "MDL", "MAD", "NPR", "NIO", "PKR ", "PYG ", "SHP ", "SCR", "SBD ", "LKR ", "THB ", "TRY ", "AED", "VUV", "YER", "AFN", "BDT ", "BRL", "KHR", "KMF", "HRK ", "DJF", "EGP ", "ETB ", "XPF", "GHS", "GNF", "HKD", "XDR ", "KES", "KGS", "LRD", "MOP ", "MVR", "MXN", "NAD", "NOK", "PLN ", "RUB", "SZL", "TJS", "TTD", "UGX ", "UYU", "VND", "TND", "UAH", "UZS ", "TMT", "GBP", "ZMW", "BTC", "BYN"
+					 ];
+   for(let i=0; i<allCurrencies.length; i++){
+        document.calc.currenciesFROM.options[i]=new Option(allCurrencies[i], allCurrencies[i]);
+        document.calc.currenciesTO.options[i]=new Option(allCurrencies[i], allCurrencies[i]);
+   }
+}
+window.onload=populateList;*/
+
+
+</script>
+</body>
+</html>
