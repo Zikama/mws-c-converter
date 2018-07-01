@@ -277,7 +277,7 @@ select:hover{
  }.container{
 	 transform: translatex(150px);zoom :30;
  }.container_b{
-	 transform: translatex(150px) translatey(590px); 
+	 transform: translatex(10px) translatey(90px); 
  }main{
 	 display: block; position:relative;left:0px;right:0px;
  }.card_f{
