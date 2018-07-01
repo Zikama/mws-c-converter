@@ -19,7 +19,7 @@ event.waitUntil(
 });
 self.addEventListener('fetch',event=> {
         let requestUrls = new URL(event.request.url);
-        if (requestUrls.pathname === '/') {
+        if (requestUrls.pathname === './') {
 		event.respondWith(caches.match('/index.html'));
 	return;	
 } 
