@@ -1,5 +1,5 @@
 "use strict";
-         let btn=document.getElementById("convt")/*
+         let btn=document.getElementById("convt"),
          foot=document.getElementById("foot");
          btn.addEventListener('click', ()=> {
          let currVal = document.getElementById("currency_Val");
@@ -29,7 +29,7 @@ function(data){
   });
 })	
 
-
+/*
 const url_currency = "https://currencyconverterapi.com/api/v5/currencies";
 fetch(url_currency)
   .then(handleErrors)
