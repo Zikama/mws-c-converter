@@ -150,7 +150,7 @@ body>nav.navba{
 	border-radius: .1875rem; 
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24); 
 	border: 1px solid rgba(0, 0, 0, .12); 
-	transform: translatex(20px) translatey(582px); 
+	transform: translatex(20px) translatey(482px); 
 }#currencyFromValue, #display, .cls {
 	margin: 15px auto; 
 	height: 52px; 
@@ -286,7 +286,7 @@ select:hover{
 	    height: auto; 
 	   	width: 200px; 
 		padding: 9px; display: block ; 
-     	border-radius: .1875rem ; left:-10px;position:absolute;margin-bottom:9px
+     	border-radius: .1875rem ; left:-10px;position:absolute;margin-bottom:9px;
     	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);     	 
  }
 #foot{
@@ -297,8 +297,6 @@ select:hover{
  .navba{
 	 position: static; margin-bottom: 1.25rem; border-radius: .1875rem; transition: none; background: #096; 
  }.container{
-	 transform: translatex(40px); 
- }.container_b{
 	 transform: translatex(40px); 
  }
 }
