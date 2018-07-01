@@ -275,9 +275,9 @@ select:hover{
  .navba{
 	 position: static; margin-bottom: 1.25rem; border-radius: .1875rem; transition: none; background: #096; 
  }.container{
-	 transform: translatex(150px);zoom :30;
+	 transform: translatex(150px);zoom :-30;
  }.container_b{
-	 transform: translatex(10px) translatey(90px); 
+
  }main{
 	 display: block; position:relative;left:0px;right:0px;
  }.card_f{
