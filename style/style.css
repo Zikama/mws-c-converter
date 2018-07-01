@@ -297,9 +297,9 @@ select:hover{
  .navba{
 	 position: static; margin-bottom: 1.25rem; border-radius: .1875rem; transition: none; background: #096; 
  }.container{
-	 transform: translatex(30px); 
+	 transform: translatex(40px); 
  }.container_b{
-	 transform: translatex(528px); 
+	 transform: translatex(38px); 
  }
 }
 @media (min-width: 992px){
