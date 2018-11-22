@@ -2,7 +2,7 @@
   "name": "mws-c-converter-github.io",
   "scope": "./",
   "icons": [{
-    "src": "imgs/icon.png",
+    "src": "imgs/icon.PNG",
     "sizes": "600x600"
   }],
   "background_color": "#cececeaf",
