@@ -6,7 +6,6 @@
   <meta http-equiv="content-language" content="en" />
   <meta name="author" lang="en" content="Nehemie Zikama" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
- <meta name="theme-color" content="#db5945">
   <title>Currency Converter</title>
 	<link rel="icon"href="./imgs/logo.png">
   <link rel="stylesheet" href="./style/style.css" />
@@ -91,8 +90,7 @@
 </article>
 <article class="recent2">
   <div class="m_h"><h1>Settings</h1></div>
-    <div id=""class="recent">Recently activities<br>
-      <span id="acts"></span>
+    <div id="update-message"class="recent">
      </div>
  </article>
 </section>
@@ -115,16 +113,81 @@
 </footer>-->
 
 
+<script src="./assets/controller/controller.js"></script>
 <script src="./script/script.js"></script>
 <script src="./script/vendor/jquery.js"></script>
 <script>
   //Selector and etc
   g=(k)=>document.querySelector(k);
   gA=(k)=>document.querySelectorAll(k);
+ const indexController = new controller();
+// indexController.dataBase();
 
 
 //Registering Sw
- if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').then(registration=>{console.log(`Wa, Service Worker registed!`);}).catch(err=>{console.log(`Woom!, Service Worker registration failed!`);});});}
+ if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./new_sw.js').then(reg=>{
+  console.log(`Wa, Service Worker registed!`);
+   if(reg.waiting) {
+            updateReady(reg.waiting);
+            return;
+        }
+
+        if(reg.installing) {
+            console.log('Service worker installing')
+            reg.installing.addEventListener('statechange', () => {
+                if(this.state == 'installed'){
+                    updateReady(this);
+                    return;
+                }
+            });
+        }
+
+        reg.addEventListener('updatefound', () => {
+            reg.installing.addEventListener('statechange', function(){
+                if(this.state == 'installed'){
+                    updateReady(this);
+                    return;
+                }
+            });
+        })
+
+
+}).catch((error) =>  {
+        // registration failed
+        console.log('Registration failed with ' + error);
+    });
+
+    // Ensure refresh is only called once.
+    // This works around a bug in "force update on reload".
+    var refreshing;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
+    });
+})
+
+function updateReady(worker){
+
+    indexController.showUI(g('#update-message'),'New version available');
+
+    const updateMessage = document.querySelector('#update-message');
+
+    updateMessage.addEventListener('click', (e) => {
+        if(e.target && e.target.id== 'ok'){
+
+            worker.postMessage({action: 'skipWaiting'});
+
+
+        }else if(e.target && e.target.id== 'no'){
+            setTimeout(() => {
+                document.querySelector('#update-message div').remove();
+            }, 500);
+        }
+
+    })
+  }
+}
 //Stop form submit on anytime btn clicked
  const form  = g("form");
  form.addEventListener("submit",(d)=>d.preventDefault());
