@@ -113,7 +113,7 @@
 </footer>-->
 
 
-<script src="./assets/controller/controller.js"></script>
+<script src="./assets/controller/Controller.js"></script>
 <script src="./script/script.js"></script>
 <script src="./script/vendor/jquery.js"></script>
 <script>
@@ -123,7 +123,8 @@
  const indexController = new controller();
 // indexController.dataBase();
 
-
+//Stop the default of form submit
+	g("form").addEventListener("submit",function(e){e.preventDefault();});
 //Registering Sw
  if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./new_sw.js').then(reg=>{
   console.log(`Wa, Service Worker registed!`);
