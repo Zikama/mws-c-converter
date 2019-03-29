@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="author" lang="en" content="Nehemie Zikama" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="icon"href="./imgs/logo.png">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="manifest"href="./manifest.json">
+    <script src="./script/numeral.min.js"></script>
+  </head>
+  <body>
+    <nav id="nav-ba"class="navba">
+      <p>
+        <img src="./imgs/logo.png" class="logo">
+        Currency Converter
+      </p>
+
+      <div class="menu">
+        <svg id="menu_humberg" class="gb_he" focusable="false" viewBox="0 0 19 19">
+        <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"></path>
+    </svg>
+      </div>
+
+      <div class="card_f">
+        <p>Currencies To Converter</p>
+        <span>
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="UGX">
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="USD">
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="PHP">
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="EUR">
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="KRN">
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="FR">
+          <input type="button" class="bloc" readonly onclick= "calc.currencyFromValue.value +=' + '"id="" value="GFG">
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="KSH">
+          <input type="button" class="bloc" readonly onclick="calc.currencyFromValue.value +=' + '"id="" value="GH">
+        </span>
+
+      </div>
+    </nav>
+    <main class="row">
+      <section>
+
+        <article class="recent1">
+          <div class="m_h"><h1>Recently activities</h1></div>
+          <div id="acts"></div>
+        </article>
+
+        <article class="form">
+          <div class="m_h"><h1>Calculate and Convert</h1></div>
+          <form class="m"name="calc">
+
+            <input type="text" value="1" name="currencyFromValue" id="currencyFromValue" placeholder="Enter amount" />
+
+            <select id="currency_Fr"NAME="currenciesFROM" class="postfix">
+            </select>
+
+            <!-- <span class="postfix span">from</span> -->
+
+            <div class="digs">
+              <div class="btn-num-container">               
+                <input type="button" value="1" class="btn-num" onclick="calc.currencyFromValue.value +='1'" id="add1"/>
+                <input type="button" value="2" class="btn-num" onclick="calc.currencyFromValue.value +='2'" id="add2"/>
+                <input type="button" value="3" class="btn-num" onclick="calc.currencyFromValue.value +='3'" id="add3"/>
+                <input type="button" value="4" class="btn-num" onclick="calc.currencyFromValue.value +='4'" id="add4"/>
+                <input type="button" value="5" class="btn-num" onclick="calc.currencyFromValue.value +='5'" id="add5"/>
+                <input type="button" value="6" class="btn-num" onclick="calc.currencyFromValue.value +='6'" id="add6"/>
+                <input type="button" value="7" class="btn-num" onclick="calc.currencyFromValue.value +='7'" id="add7"/>
+                <input type="button" value="8" class="btn-num" onclick="calc.currencyFromValue.value +='8'" id="add8"/>
+                <input type="button" value="9" class="btn-num" onclick="calc.currencyFromValue.value +='9'" id="add9"/>
+                <input type="button"  value="." class="btn-num btn-dot" onclick='v(".")'>
+                <input type="button" value="0" class="btn-num" onclick="calc.currencyFromValue.value +='0'" id="add0"/>
+                <input type="button"  value="=" class="btn-num" onclick='e()'>
+              </div>
+
+              <div class="sign-btn-container" >
+                <input type="button" class="sign-btn" value="D" onclick='f("D")'/>
+                <input type="button" class="sign-btn" onclick="calc.currencyFromValue.value +='+'"id="add_pls"value="+"/>
+                <input type="button" class="sign-btn" onclick="calc.currencyFromValue.value +='-'"id="add_" value="-"/>
+                <input type="button" class="sign-btn" onclick="calc.currencyFromValue.value +='*'" id="add_m"value="x"/>
+                <input type="button" class="sign-btn" onclick="calc.currencyFromValue.value +='/'"id="add_div"value="/"/>
+                <input type="button" class="sign-btn" onclick="calc.currencyFromValue.value +='%'" id="add_mo" value="%"/>
+                <input type="button" class="sign-btn" value="C" onclick="calc.currencyFromValue.value=''"/>
+              </div>
+
+            </div>
+
+            <!-- <span class="postfix span">to</span> -->
+            <select name="currenciesTO" id="currency_To" class="postfix"></select>
+            <div class="extra">
+              <span class="">
+                <input type="text" id="currency_Val" readonly="" placeholder="#Results" class="cls">
+                <span id="IntoConnverted"></span>
+              </span>
+              <span class="">
+                <button id="convt" >Convert</button>
+                <button id="save" type="hidden" >Save</button>
+              </span>
+            </div>
+          </form>
+        </article>
+
+        <article class="recent2">
+          <div class="m_h"><h1>Settings</h1></div>
+          <div id="update-message"class="recent">
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <script src="./assets/controller/controller.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/vendor/jquery.js"></script>
+    <script>
+    //Selector and etc
+    g=(k)=>document.querySelector(k);
+    gA=(k)=>document.querySelectorAll(k);
+    const indexController = new controller();
+    // indexController.dataBase();
+    //Registering Sw
+    if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./new_sw.js').then(reg=>{
+    console.log(`Wa, Service Worker registed!`);
+    if(reg.waiting) {
+    updateReady(reg.waiting);
+    return;
+    }
+    if(reg.installing) {
+    console.log('Service worker installing')
+    reg.installing.addEventListener('statechange', () => {
+    if(this.state == 'installed'){
+    updateReady(this);
+    return;
+    }
+    });
+    }
+    reg.addEventListener('updatefound', () => {
+    reg.installing.addEventListener('statechange', function(){
+    if(this.state == 'installed'){
+    updateReady(this);
+    return;
+    }
+    });
+    })
+    }).catch((error) =>  {
+    // registration failed
+    console.log('Registration failed with ' + error);
+    });
+    // Ensure refresh is only called once.
+    // This works around a bug in "force update on reload".
+    var refreshing;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    window.location.reload();
+    refreshing = true;
+    });
+    })
+    function updateReady(worker){
+    indexController.showUI(g('#update-message'),'New version available');
+    const updateMessage = document.querySelector('#update-message');
+    updateMessage.addEventListener('click', (e) => {
+    if(e.target && e.target.id== 'ok'){
+    worker.postMessage({action: 'skipWaiting'});
+    }else if(e.target && e.target.id== 'no'){
+    setTimeout(() => {
+    document.querySelector('#update-message div').remove();
+    }, 500);
+    }
+    })
+    }
+    }
+    //Stop form submit on anytime btn clicked
+    const form  = g("form");
+    form.addEventListener("submit",(d)=>d.preventDefault());
+    function c(val)
+    {
+    document.getElementById("currencyFromValue").value=val;
+    }
+    function v(val){
+    document.getElementById("currencyFromValue").value+=val;
+    }
+    function f(val){
+    const ans = document.getElementById("currencyFromValue");
+    ans.value = ans.value.substring(0,ans.value.length-1);
+    }
+    function e(){
+    try {
+    c(eval(document.getElementById("currencyFromValue").value))
+    }
+    catch(e)
+    {
+    c('Error!')
+    }};
+      function populateList() {
+    let allCurrencies = [
+    "ALL", "AED", "ANG", "AWG", "AOA", "AMD", "AFN", "AUD", "ARS", "AZN", "BYR", "BOB", "BGN", "BBD", "BND", "BTN", "BHD", "BZD", "BWP", "BIF","BSD", "BAM", "BDT", "BRL", "BTC", "BYN", "CVE", "CNY", "CRC", "CZK",  "CUP", "CAD", "CLP", "CDF", "COP", "DOP", "DKK", "DJF", "DZD", "EUR", "EGP", "ETB","ERN", "FR", "FJD", "FKP", "JMD", "JOD", "JPY", "HUF", "HTG", "GHS", "GNF", "HNL", "HRK", "HKD", "IRR", "IDR", "ILS", "INR", "ISK", "IQD", "GH", "GBP", "GFG", "GTQ", "GIP", "GMD", "GYD", "GEL", "KRW", "KYD", "KZT", "KWD", "KPW", "KHR", "KMF", "KES", "KGS", "KRN", "KSH", "LAK", "LYD", "LSL", "LBP", "LVL", "LKR", "LRD", "MWK", "MRO", "MZN", "MOP", "MVR", "MXN", "MYR", "MUR", "MKD", "MNT", "MMK", "MGA", "MDL", "MAD", "NGN", "NZD", "NPR", "NIO", "NAD", "NOK", "OMR", "PGK", "PEN", "PAB", "PHP", "CHF", "PKR", "PYG", "PLN", "QAR", "RWF", "RSD", "RUB", "RON", "SEK", "SAR", "SGD", "ZAR", "SRD", "SHP", "SCR", "SBD", "STD", "SLL", "SOS", "SDG", "SYP", "SZL", "TZS", "TWD", "TOP", "THB", "TRY", "TND", "TMT", "TJS", "TTD", "USD", "UGX", "UYU", "UAH", "UZS", "VEF", "VUV", "VND", "WST", "XCD", "XAF", "XOF", "XPF", "XDR", "YER", "ZMW"
+              ];
+    
+    for(let i=0; i<allCurrencies.length; i++){
+      document.calc.currenciesFROM.options[i]=new Option(allCurrencies[i], allCurrencies[i]);
+      document.calc.currenciesTO.options[i]=new Option(allCurrencies[i], allCurrencies[i]);
+      }
+      }
+      window.onload=populateList;
+      //Show less function
+      const h = g(".m_h"),recent1 =g(".recent");
+      show_les=(e,l)=>{
+      e.addEventListener("click",()=>{
+      l.classList.toggle("recent1_hide");
+      })
+      };show_les(h,recent1);
+      //Use the menu Humberg
+      const humberg = g(".menu #menu_humberg");
+      humberg.addEventListener("click",e=>{
+      g("body").classList.toggle("togo_overflow");
+      g(".card_f").classList.toggle("togo_menu");
+      });
+      </script>
+  </body>
+</html>
