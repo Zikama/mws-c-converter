@@ -1,8 +1,8 @@
 {
-  "name": "mws-c-converter-github.io",
+  "name": "Currency-converter",
   "scope": "./",
   "icons": [{
-    "src": "imgs/icon.PNG",
+    "src": "./assets/imgs/logo.png",
     "sizes": "600x600"
   }],
   "background_color": "#cececeaf",
